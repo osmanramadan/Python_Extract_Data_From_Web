@@ -33,10 +33,8 @@ def get_post_contact(links):
             EC.presence_of_element_located((By.TAG_NAME, 'body'))
         )
 
-        # username = "0590592553"
-        # password = "As123@123@"
-        username = "0540432030"
-        password = "As123@123@"
+        username = ""
+        password = ""
 
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "username"))
