@@ -1,6 +1,8 @@
-# 🚗 Haraj Saudi Web Scraper
+#  Haraj Saudi Web Scraper
 
 A Python-based web scraper to extract classified listings and ads from [Haraj.com.sa](https://haraj.com.sa) — the largest Saudi Arabia classifieds platform. Supports category browsing, keyword search, city filtering, multi-page scraping, and automated phone number extraction via Selenium.
+
+![data from excel file](images/data.jpg)
 
 ---
 
@@ -110,7 +112,7 @@ pip install requests beautifulsoup4 pandas selenium webdriver-manager openpyxl
 
 **3. Add your Haraj credentials:**
 
-Open `scraper.py` and fill in your login details inside `get_post_contact()`:
+Open `pyscript.py` and fill in your login details inside `get_post_contact()`:
 
 ```python
 username = "your_username"
@@ -124,31 +126,13 @@ password = "your_password"
 Run the scraper:
 
 ```bash
-python scraper.py
+python pyscript.py
 ```
 
 You will be prompted interactively:
 
-```
-Enter the number of pages to fetch (or 'q' to quit): 3
+![bot in terminal](images/terminal.jpg)
 
-Available categories:
-0. All posts
-1. سيارات
-2. عقارات
-...
-Enter 's' to search by keyword.
-Enter the number of the category or 's' to search: s
-
-Enter the search term: كامري
-
-Available cities:
-0. All cities
-1. الرياض
-2. جده
-...
-Enter the number of the city you want to search in: 1
-```
 
 The scraper then runs automatically and saves results to `posts_data.xlsx`.
 
@@ -173,7 +157,7 @@ Example:
 ```
 haraj-scraper/
 │
-├── scraper.py           # Main scraper script
+├── pyscript.py           # Main scraper script
 │   ├── get_post_contact()          # Selenium login + phone extraction
 │   ├── fetch_posts()               # HTTP GET for listing pages
 │   ├── extract_links()             # Parse post links from results
@@ -182,7 +166,10 @@ haraj-scraper/
 │   ├── fetch_link_content()        # Fetch individual post HTML
 │   ├── extract_data_from_content() # Parse full post details
 │   └── main()                      # Interactive CLI entry point
-│
+├── test.py                         # test file
+├── images
+    ├── data.jpg
+    ├── terminal.jpg
 ├── posts_data.xlsx      # Output file (generated after running)
 └── README.md            # Project documentation
 ```
@@ -209,5 +196,3 @@ haraj-scraper/
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-> Built with ❤️ using Python, Selenium, BeautifulSoup & Pandas
